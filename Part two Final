@@ -117,7 +117,7 @@ def update_output_container(selected_statistics, input_year):
         #TASK 2.5: Create and display graphs for Recession Report Statistics
 
         #Plot 1 Automobile sales fluctuate over Recession Period (year wise) using line chart
-         # grouping data for plotting
+        #grouping data for plotting
         yearly_rec=(
             recession_data.groupby('Year')['Automobile_Sales'].mean().reset_index()
         )
@@ -199,7 +199,7 @@ def update_output_container(selected_statistics, input_year):
         #TASK 2.6: Create and display graphs for Yearly Report Statistics
         #Yearly Statistic Report Plots
         #Check for Yearly Statistics.                             
-    elif input_year and selected_statistics=='Yearly Statistics'):
+    elif input_year and selected_statistics=='Yearly Statistics':
         yearly_data = data[data['Year'] == input_year]
                                                        
         #plot 1 Yearly Automobile sales using line chart for the whole period.
@@ -238,10 +238,9 @@ def update_output_container(selected_statistics, input_year):
         Y_chart3 = dcc.Graph(
             figure=px.bar(
                 avr_vdata,
-                x='unemployment_rate',
+                x='Year',
                 y='Automobile_Sales',
-                color='Vehicle_Type',
-                title=f'Average Vehicles Sold by Vehicle Type in the Selected Year {input_year}',
+                title='Average Vehicles Sold by Vehicle Type in the Selected Year {input_year}',
             )
         )
 
@@ -280,7 +279,4 @@ def update_output_container(selected_statistics, input_year):
 # Run the Dash app
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
 
