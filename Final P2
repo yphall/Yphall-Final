@@ -61,7 +61,7 @@ app.layout = html.Div([
             placeholder='Select-year',
         )),
     html.Div([#TASK 2.3: Add a division for output display
-    html.Div(id='..........', className='..........', style={.........}),])
+    	html.Div(id='output-container', className='chart_grid', style={'display': 'flex'}),])
 ])
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
