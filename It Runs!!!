@@ -45,7 +45,7 @@ app.layout = html.Div([
                 {'label': 'Recession Period Statistics', 'value': 'Recession Period Statistics'}
             ],
             value='Select Statistics',
-            placeholder='Select a report type',
+            placeholder='Recession Period Statistics',
             style={
                 'width': '80%',
                 'textAlign': 'center',
