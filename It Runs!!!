@@ -210,7 +210,7 @@ def update_output_container(selected_statistics, input_year):
         #grouping data for plotting.
         #Hint:Use the columns Year and Automobile_Sales
         avr_vdata=(
-            yearly_data.groupby('Year')['Automobile_Sales'].mean().reset_index()
+            yearly_data.groupby(['Year', 'Vehicle_Type'])['Automobile_Sales'].mean().reset_index()
         )
 
         Y_chart3 = dcc.Graph(
@@ -218,6 +218,7 @@ def update_output_container(selected_statistics, input_year):
                 avr_vdata,
                 x='Year',
                 y='Automobile_Sales',
+                color='Vehicle_Type',
                 title='Average Vehicles Sold by Vehicle Type in the Selected Year {input_year}',
             )
         )
