@@ -181,7 +181,9 @@ def update_output_container(selected_statistics, input_year):
         #plot 1 Yearly Automobile sales using line chart for the whole period.
         #grouping data for plotting.
         #Hint:Use the columns Year and Automobile_Sales.
-        yas= yearly_data.groupby('Year')['Automobile_Sales'].mean().reset_index()
+        # But for this graph, use the full data for the whole period
+        full_period_data = data[(data['Year'] >= 1980) & (data['Year'] <= 2013)]
+        yas= full_period_data.groupby('Year')['Automobile_Sales'].mean().reset_index()
         Y_chart1 = dcc.Graph(
             figure=px.line(
                 yas,
